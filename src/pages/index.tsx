@@ -1,5 +1,6 @@
-import { Link } from 'waku';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+import { css } from '../../styled-system/css';
 
 export default async function HomePage() {
   const data = await getData();
@@ -7,7 +8,7 @@ export default async function HomePage() {
   return (
     <div>
       <title>{data.title}</title>
-      <h1 className='text-4xl font-bold tracking-tight'>{data.headline}</h1>
+      <h1 className={css({ fontSize: '2xl', fontWeight: 'bold' })}>{data.headline}</h1>
       <p>{data.body}</p>
 
       <ConnectButton />

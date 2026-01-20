@@ -6,13 +6,15 @@ import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { Providers } from '../components/providers';
 
+import { css } from '../../styled-system/css';
+
 type RootLayoutProps = { children: ReactNode };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const data = await getData();
 
   return (
-    <div className="font-['Nunito']">
+    <div className={css({ fontFamily: "'Nunito'" })}>
       <meta name='description' content={data.description} />
       <link rel='icon' type='image/png' href={data.icon} />
       <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -23,7 +25,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         precedence='font'
       />
       <Header />
-      <main className="m-6 flex items-center *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
+      <main className={css({ paddingTop: '80px', paddingBottom: '80px', minHeight: '100vh' })}>
         <Providers>{children}</Providers>
       </main>
       <Footer />
