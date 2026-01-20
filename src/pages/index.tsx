@@ -1,5 +1,6 @@
 import { Link } from 'waku';
 import { Counter } from '../components/counter';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default async function HomePage() {
   const data = await getData();
@@ -13,6 +14,8 @@ export default async function HomePage() {
       <Link to="/about" className="mt-4 inline-block underline">
         About page
       </Link>
+
+      <ConnectButton />
     </div>
   );
 }

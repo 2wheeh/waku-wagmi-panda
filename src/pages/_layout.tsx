@@ -3,6 +3,7 @@ import '../styles.css';
 import type { ReactNode } from 'react';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
+import { Providers } from '../components/providers';
 
 type RootLayoutProps = { children: ReactNode };
 
@@ -22,7 +23,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       />
       <Header />
       <main className="m-6 flex items-center *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
-        {children}
+        <Providers>{children}</Providers>
       </main>
       <Footer />
     </div>
